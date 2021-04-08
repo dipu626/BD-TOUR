@@ -1,0 +1,69 @@
+<div class="container">
+    <!-- <ul *ngIf="userList$ | async as userLists">
+        <li *ngFor="let list of userLists"> 
+            <p>name: {{list.name}}</p>
+            <p>email: {{list.email}}</p>
+            <p>phone: {{list.phone}}</p>
+            <p>city: {{list.city}}</p>
+            <p>country: {{list.country}}</p>
+        </li>
+    </ul> -->
+
+    <!-- <table border="2px" *ngIf="userList$ | async as userLists">
+        
+        <tr>
+            <th  *ngFor="let tableHeader of displayedColumns">
+                {{tableHeader}}
+            </th>
+        </tr>
+        <tr *ngFor="let tableData of userLists">
+            <td>{{tableData.name}}</td>
+            <td>{{tableData.email}}</td>
+            <td>{{tableData.phone}}</td>
+            <td>{{tableData.city}}</td>
+            <td>{{tableData.country}}</td>
+        </tr>
+
+    </table> -->
+
+    <table mat-table [dataSource]="userList$" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef> City </th>
+          <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef> Country </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+
+</div>

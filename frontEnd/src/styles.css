@@ -1,0 +1,8 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    width: 100%;
+    margin: 0px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,31 @@
+.login-flex-container {
+    width: 20%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+
+    /* border: black 2px solid; */
+    box-shadow: 5px 5px 10px rgba(1, 1, 1, 0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+
+.wrong-email-password-message {
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.sign-up-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,9 @@
+.file-upload-container {
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+
+    border: blue 2px solid;
+    justify-content: center;
+}

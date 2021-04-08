@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="register-container">
+
+        
+        <div class="form-container">
+            
+            <form [formGroup] = "userForm" class="normal-form" (ngSubmit)="onSubmitForRegisterUser()">
+                <div class="input-container">
+                    <div class="register-heading">
+                        Sign Up
+                    </div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Name
+                        </mat-label>
+                        <input matInput formControlName="name" placeholder="Enter your name..." required>
+                        <mat-icon matPrefix>
+                            account_box
+                        </mat-icon>
+                        <mat-error>
+                            This field is mandatory
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Email
+                        </mat-label>
+                        <input matInput type="email" formControlName="email" placeholder="Enter your email address..." required>
+                        <mat-icon matPrefix>
+                            email
+                        </mat-icon>
+                        <mat-error>Invalid email address</mat-error>
+
+                        <div [hidden]="alreadyUsedThisEmail">
+                            <strong class="used-email-message text-danger">The email is already used!</strong>
+                        </div>
+
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Password
+                        </mat-label>
+                        <input matInput type="password" formControlName="password" placeholder="Enter your password...">
+                        <mat-icon matPrefix>
+                            lock
+                        </mat-icon>
+                        <mat-error>Password must contain atleast 6 character</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Confirm Password
+                        </mat-label>
+                        <input matInput type="password" formControlName="confirm" placeholder="Confirm password...">
+                        <mat-icon matPrefix>
+                            lock
+                        </mat-icon>
+
+                        <!-- <div *ngIf="!confirm.valid && (confirm.dirty)">
+                            <small class="text-danger" *ngIf="userForm.errors?.misMatch">
+                                Password did not match
+                            </small>
+                        </div> -->
+                        <small class="text-danger" *ngIf="userForm.errors?.misMatch">Password did not match</small>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Phone Number
+                        </mat-label>
+                        <input matInput formControlName="phone" placeholder="Enter your phone number...">
+                        <mat-icon matPrefix>
+                            settings_phone
+                        </mat-icon>
+                    </mat-form-field>
+
+                    <!-- <mat-form-field appearance="outline">
+                        <input matInput formControlName="city" placeholder="Enter your city...">
+                    </mat-form-field> -->
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Country
+                        </mat-label>
+                        <input matInput formControlName="country" placeholder="Enter your country...">
+                        <mat-icon matPrefix>
+                            place
+                        </mat-icon>
+                    </mat-form-field>
+
+                    <div class="submit-button-container">
+                        <button mat-raised-button color="accent" (click)="onReset()"> Reset </button>
+                        <button mat-raised-button color="primary" type="submit"> Sign Up </button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.container {
+    width: 100%;
+    margin: 100px auto;
+    display: flex-row;
+    justify-content: center;
+}
+
+.item {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    border: black solid 1px;
+}
+
+.item1 {
+    padding: 20px;
+}
+
+.item2 {
+    padding: 20px;
+}
+
+.item3 {
+    padding: 20px;
+}
+
+.item4 {
+    padding: 20px;
+}

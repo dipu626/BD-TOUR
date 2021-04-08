@@ -1,0 +1,26 @@
+<div class="file-upload-container">
+    
+    <!-- <div>
+        <input type="file" (change)="selectFile($event)">
+    </div>
+
+    <div>
+        <button mat-raised-button color="primary" (click)="uploadFile()">Upload</button>
+    </div> -->
+
+    <form [formGroup]="fileForm">
+        <mat-form-field appearance="fill">
+            <ngx-mat-file-input formControlName="file" placeholder="Basic Input" (change)="selectFile($event)"></ngx-mat-file-input>
+        </mat-form-field>
+        <div *ngIf="!fileSelected">
+            <h4 class="text-danger" mat-text>
+                No file selected
+            </h4>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" (click)="uploadFile()">Upload</button>
+        </div>
+    </form>
+
+</div>

@@ -39,12 +39,13 @@
     if (!checkPassword) {
         return res.status(400).send("Incorrect password");
     }
+    res.send(findUser);
     res.send("Welcome, you are now logged in");
  });
 
  // UPDATE IN USER PROFILE
- router.put("/update", async(req, res) => {
-     const newData = new User({
+ router.put("/update-user-details", async(req, res) => {
+     const updatedData = new User({
          name: req.body.name,
          email: req.body.email,
          password: req.body.password,
@@ -52,13 +53,37 @@
          city: req.body.city,
          country: req.body.country
      });
-     try {
-         const updatedUserData = await newData.save();
-         res.send("Your pofile is updated");
+     /* const findUser = await User.findOne({
+         email: req.body.email
+     }); */
+     //res.json(findUser);
+     /* try {
+         const updatedUserData = await User.findOneAndUpdate(
+             {
+                 email: req.body.email
+             }, 
+            {
+                country: "England"
+            },
+            {
+                upsert: true
+            });
+         res.json("Your pofile is updated");
      } catch (error) {
          res.status(400).send("Error. Please try again latter");
-     }
+     } */
  });
+
+
+ // VIEW ALL USER
+router.get("/view-user-list", async(req, res) => {
+    const userList = await User.find();
+    try {
+        res.json(userList);
+    } catch (error) {
+        res.status(401).send("Error. Can't view user list");
+    }
+})
 
 
  module.exports = router;
