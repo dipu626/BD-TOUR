@@ -25,6 +25,8 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { NgxMatFileInputModule } from '@angular-material-components/file-input';
 import { AboutComponent } from './about/about.component';
 import { AboutChildComponent } from './about-child/about-child.component';
+import { ContactComponent } from './contact/contact.component';
+import { ChangeColorDirective } from './change-color.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AboutChildComponent } from './about-child/about-child.component';
     HomeComponent,
     FileUploadComponent,
     AboutComponent,
-    AboutChildComponent
+    AboutChildComponent,
+    ContactComponent,
+    ChangeColorDirective
   ],
   imports: [
     BrowserModule,
